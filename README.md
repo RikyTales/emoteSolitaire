@@ -1,0 +1,1 @@
+https://rikytales.github.io/emoteSolitaire/?channel=CHANNEL
