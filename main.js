@@ -29,6 +29,12 @@ client.on("chat", function(channel, userstate, message, self) {
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight)
     background(7)
+    if (channel == "sleepcycles") {
+        clear()
+        textSize(100);
+        text("STARTING SOON", width/4, height/3)
+        fill(0, 102, 153);
+    }
 }
 
 function draw() {
@@ -38,8 +44,8 @@ function draw() {
 }
 
 function Emote(img) {
-    this.x = random(200, window.innerWidth - 200)
-    this.y = random(200, window.innerHeight - 600)
+    this.x = random(200, width - 200)
+    this.y = random(200, height/6)
     this.speedX = random(-4, 4)
     this.speedY = random(-16, 16)
     this.lifespan = 1000
