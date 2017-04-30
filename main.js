@@ -50,7 +50,7 @@ function Emote(img) {
     this.y = random(height/5, height/6)
     this.speedX = random(-4, 4)
     this.speedY = random(-16, 16)
-    this.lifespan = 1000
+    this.lifespan = 250
     this.img = loadImage(`https://static-cdn.jtvnw.net/emoticons/v1/${img}/2.0`)
 
     this.update = function() {
@@ -60,13 +60,17 @@ function Emote(img) {
 
         image(this.img, this.x, this.y)
 
-        if (this.x > window.innerWidth + 50 || this.x < 0 - 50 || this.lifespan < 0) {
+        if (this.x > window.innerWidth + 50 || this.x < 0 - 50 || this.lifespan < -50) {
             var index = emotes.indexOf(this)
             emotes.splice(index, 1)
         }
         if (this.y > window.innerHeight - 70) {
-            this.y = window.innerHeight - 70
-            this.speedY = -this.speedY * 0.85
+            if (this.lifespan < 0) {
+                this.speedY += 0.98
+            } else {
+                this.y = window.innerHeight - 70
+                this.speedY = -this.speedY * 0.85
+            }
         }
         this.speedY += 0.98
     }
