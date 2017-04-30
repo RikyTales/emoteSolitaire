@@ -43,7 +43,7 @@ function draw() {
 
 function Emote(img) {
     this.x = random(200, width - 200)
-    this.y = random(200, height/6)
+    this.y = random(height/5, height/6)
     this.speedX = random(-4, 4)
     this.speedY = random(-16, 16)
     this.lifespan = 1000
