@@ -2,6 +2,7 @@ var emotes = []
 var params = window.location.search.slice(1)
 var searchParams = new URLSearchParams(params)
 var channel = searchParams.get("channel") || "rikitales"
+var bg = searchParams.get("bg")
 
 var currentEmotes = []
 var options = {
@@ -29,11 +30,8 @@ client.on("chat", function(channel, userstate, message, self) {
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight)
     background(7)
-    if (channel == "sleepcycles") {
+    if (bg == "none") {
         clear()
-        textSize(100);
-        text("STARTING SOON", width/4, height/3)
-        fill(0, 102, 153);
     }
 }
 
