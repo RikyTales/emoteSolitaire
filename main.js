@@ -3,6 +3,7 @@ var params = window.location.search.slice(1)
 var searchParams = new URLSearchParams(params)
 var channel = searchParams.get("channel") || "rikitales"
 var bg = searchParams.get("bg")
+var solitaire = searchParams.get("solitaire")
 
 var currentEmotes = []
 var options = {
@@ -36,6 +37,9 @@ function setup() {
 }
 
 function draw() {
+    if (solitaire == "none") {
+        clear()
+    }
     for (var i = emotes.length-1; i >= 0; i--) {
         emotes[i].update()
     }
