@@ -4,8 +4,6 @@ var searchParams = new URLSearchParams(params)
 var channel = searchParams.get("channel") || "rikitales"
 var bg = searchParams.get("bg")
 var solitaire = searchParams.get("solitaire")
-
-var currentEmotes = []
 var options = {
     options: {
         debug: false
